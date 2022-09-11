@@ -1,9 +1,12 @@
 import os
 import uuid
 
-from peewee import PostgresqlDatabase, Model, UUIDField, CharField, TextField, DateField, Field
+from dotenv import load_dotenv
+from peewee import PostgresqlDatabase, Model, UUIDField, CharField, TextField, DateField
 
-pg_db = PostgresqlDatabase('db', user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
+load_dotenv()
+
+pg_db = PostgresqlDatabase(os.getenv('DB_NAME'), user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
                            host=os.getenv('DB_LOCALHOST'), port=5432)
 
 
