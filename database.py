@@ -3,7 +3,7 @@ import uuid
 
 from peewee import PostgresqlDatabase, Model, UUIDField, CharField, TextField, DateField, Field
 
-pg_db = PostgresqlDatabase('db', user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
+pg_db = PostgresqlDatabase(os.getenv('DB_NAME'), user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
                            host=os.getenv('DB_LOCALHOST'), port=5432)
 
 
