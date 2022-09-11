@@ -1,13 +1,14 @@
 import os
+import uuid
 
-from peewee import PostgresqlDatabase, Model, CharField, TextField, DateField
-
+from peewee import PostgresqlDatabase, Model, UUIDField, CharField, TextField, DateField, Field
 
 pg_db = PostgresqlDatabase('db', user=os.getenv('DB_USER'), password=os.getenv('DB_PASSWORD'),
                            host=os.getenv('DB_LOCALHOST'), port=5432)
 
 
 class Add(Model):
+    id = UUIDField(primary_key=True, default=uuid.uuid4)
     title = CharField()
     image = CharField()
     location = CharField()

@@ -5,7 +5,6 @@ from add_extractor import AddExtractor, UtilsExtractor
 from datetime import datetime
 
 
-
 async def main():
     current_page = 1
     is_next_elem_present = True
